@@ -35,10 +35,23 @@ torchelastic_5yk74r6c/
 annote.log
 cv2
 num_init_cond_frames
-./package-lock.json
+**/package-lock.json
 package.json
 
 run.txt
 train.log
 groundingdino_swinb_cogcoor.pth
 .goutputstream-9XD2E3
+
+
+cat > data/.gitignore << 'EOF'
+*
+!.gitignore
+!**/.gitkeep
+EOF
+
+cat > storage/.gitignore << 'EOF'
+*
+!.gitignore
+!**/.gitkeep
+EOF
