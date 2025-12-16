@@ -33,12 +33,12 @@ GroundingDINO/
 
 torchelastic_5yk74r6c/
 annote.log
-/cv2
+cv2
 num_init_cond_frames
 package-lock.json
-/package.json
+package.json
 
-/run.txt
+run.txt
 train.log
 groundingdino_swinb_cogcoor.pth
 .goutputstream-9XD2E3
