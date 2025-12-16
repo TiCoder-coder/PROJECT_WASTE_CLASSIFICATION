@@ -1,0 +1,36 @@
+data:
+  train_dir: /media/voanhnhat/SDD_OUTSIDE/PROJECT_DETECT_OBJECT/data/processed
+  val_dir: /media/voanhnhat/SDD_OUTSIDE/PROJECT_DETECT_OBJECT/data/annotated
+  batch_size: 8
+
+model:
+  _target_: sam2.sam2.build_sam.build_sam2
+  config_path: /media/voanhnhat/SDD_OUTSIDE/PROJECT_DETECT_OBJECT/configs/sam2.1/sam2.1_hiera_b+.yaml
+  checkpoint: /media/voanhnhat/SDD_OUTSIDE/PROJECT_DETECT_OBJECT/checkpoints/sam2.1_hiera_base_plus.pt
+
+logging:
+  log_dir: logs
+  save_images: true
+
+checkpoint:
+  save_dir: checkpoints
+  save_freq: 1
+  save_list: []
+  model_weight_initializer: null
+
+max_epochs: 20
+mode: train
+accelerator: cuda
+seed_value: 123
+val_epoch_freq: 1
+
+optim:
+  optimizer:
+    _target_: torch.optim.AdamW
+    lr: 1e-4
+  amp:
+    enabled: true
+    amp_dtype: float16
+
+loss:
+  _target_: torch.nn.MSELoss
